@@ -1,5 +1,5 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ARESB Estatísticas V1.1</title>
+<title>ARESB Estatísticas V1.2 — candidata à publicação</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f4f7f5;color:#17372d}
 .hero{background:linear-gradient(120deg,#063f32,#0b624b);color:white;padding:25px 28px}.hero small{font-weight:800;letter-spacing:.12em;font-size:11px}.hero h1{margin:5px 0 2px;font-size:32px}.hero p{margin:0;opacity:.85;font-size:13px}
@@ -42,24 +42,26 @@
  .linechart{height:240px}
  .section{padding:14px}
 }
+
+#priceFXStatus{line-height:1.6}
 </style></head><body>
-<section class="hero"><small>ASSOCIAÇÃO DOS RESINADORES DO BRASIL</small><h1>ARESB ESTATÍSTICAS</h1><p>V1.1 · Comércio Exterior até out/2026 · Preços até jul/2026 · Produção até 2024</p></section>
+<section class="hero"><small>ASSOCIAÇÃO DOS RESINADORES DO BRASIL</small><h1>ARESB ESTATÍSTICAS</h1><p>V1.2 — candidata à publicação · Comércio Exterior até out/2026 · Preços até out/2026 · Produção até 2024</p></section>
 <main class="wrap">
 <div class="nav"><button id="navHome">Visão Geral</button><button id="navComex" class="active">Comércio Exterior</button><button id="navProd">Produção Nacional</button><button id="navPreco">Preço da Goma Resina</button><button id="navHist">Arquivo Histórico</button></div>
 
 <div class="utility">
-  <div><b>ARESB Estatísticas V1.0</b><span> · Comex out/2026 · Preços jul/2026 · Produção 2024</span></div>
+  <div><b>ARESB Estatísticas V1.2 — candidata à publicação</b><span> · Comex out/2026 · Preços out/2026 · Produção 2024</span></div>
   <div class="utility-actions">
     
     <button id="btnExportar">Exportar CSV</button><button id="btnMetodologia">Metodologia</button>
   </div>
 </div>
-<div id="home" style="display:none"><div class="homegrid"><div class="card homecard" id="goComex"><b>Comércio Exterior</b><p>Exportação, importação, balanço, mercados e UFs · 1997–2026.</p></div><div class="card homecard soon"><b>Produção Nacional</b><p>Estimativa da produção brasileira · próxima onda.</p></div><div class="card homecard soon"><b>Preço da Goma Resina</b><p>Preço Fazenda Elliottii × Tropical · próxima onda.</p></div></div></div>
+<div id="home" style="display:none"><div class="homegrid"><div class="card homecard" id="goComex"><b>Comércio Exterior</b><p>Exportação, importação, balanço, mercados e UFs · 1997–2026.</p></div><div class="card homecard"><b>Produção Nacional</b><p>Estimativa histórica da produção brasileira · 2007–2024.</p></div><div class="card homecard"><b>Preço da Goma Resina</b><p>Preço Fazenda Elliottii × Tropical · 2013–out/2026.</p></div></div></div>
 <div id="comex">
 <div class="notice">Série oficial operacional: 1997–2026 · Comex Stat/MDIC. Dados realizados de janeiro a outubro de 2026. Extração: 13/11/2026. O período 1989–1996 foi separado como Arquivo Histórico ARESB.</div>
 <div class="filters"><div><label>Produto</label><select id="produto"><option value="RESINA">Resina</option><option value="BREU">Breu</option><option value="TEREBINTINA">Terebintina</option></select></div><div><label>Fluxo</label><select id="fluxo"><option>Exportação</option><option>Importação</option></select></div><div><label>Período</label><select id="periodo"><option value="all">1997–2026 · Todo o período</option></select></div></div>
 <div class="kpis"><div class="card"><span id="lblValor">Valor</span><strong id="kUsd">—</strong><strong id="kBrl">—</strong><small id="kFx">—</small></div><div class="card"><span>Volume</span><strong id="kVol">—</strong></div><div class="card"><span>Preço médio</span><strong id="kPusd">—</strong><strong id="kPbrl">—</strong></div><div class="card"><span>Saldo comercial</span><strong id="kSaldo">—</strong><small id="kSaldoR">—</small></div><div class="card"><span id="lblPais">Destinos</span><strong id="kPais">—</strong></div><div class="card"><span id="lblTop">Principal mercado</span><strong id="kTop">—</strong></div></div>
-<section class="section"><h2>Evolução histórica</h2><p class="sub">Clique em uma barra para selecionar o ano e recalcular o painel.</p><div class="tabs"><button class="active" data-tab="valor">Valor</button><button data-tab="volume">Volume</button><button data-tab="preco">Preço médio</button></div><div class="detail" id="detail"></div><div id="viewValor"><div class="chartbox"><div class="ct">VALOR · R$</div><div class="chart" id="cBrl"></div><div class="axis" id="aBrl"></div></div><div class="chartbox"><div class="ct usd">VALOR · US$</div><div class="chart" id="cUsd"></div><div class="axis" id="aUsd"></div></div></div><div id="viewVolume" style="display:none"><div class="chartbox"><div class="ct">VOLUME · t</div><div class="chart" id="cVol"></div><div class="axis" id="aVol"></div></div></div><div id="viewPreco" style="display:none"><div class="chartbox"><div class="ct">PREÇO MÉDIO · R$/kg</div><div class="chart" id="cPr"></div><div class="axis" id="aPr"></div></div><div class="chartbox"><div class="ct usd">PREÇO MÉDIO · US$/kg</div><div class="chart" id="cPu"></div><div class="axis" id="aPu"></div></div></div></section>
+<section class="section"><h2>Evolução histórica</h2><p class="sub">Clique em uma barra para selecionar o ano e recalcular o painel.</p><div class="tabs"><button class="active" data-tab="valor">Valor</button><button data-tab="volume">Volume</button><button data-tab="preco">Preço médio</button></div><div class="detail" id="detail"></div><div id="viewValor"><div class="chartbox"><div class="ct usd">VALOR · US$</div><div class="chart" id="cUsd"></div><div class="axis" id="aUsd"></div></div><div class="chartbox"><div class="ct">VALOR · R$</div><div class="chart" id="cBrl"></div><div class="axis" id="aBrl"></div></div></div><div id="viewVolume" style="display:none"><div class="chartbox"><div class="ct">VOLUME · t</div><div class="chart" id="cVol"></div><div class="axis" id="aVol"></div></div></div><div id="viewPreco" style="display:none"><div class="chartbox"><div class="ct">PREÇO MÉDIO · R$/kg</div><div class="chart" id="cPr"></div><div class="axis" id="aPr"></div></div><div class="chartbox"><div class="ct usd">PREÇO MÉDIO · US$/kg</div><div class="chart" id="cPu"></div><div class="axis" id="aPu"></div></div></div></section>
 <div class="lower"><section class="section" style="margin-top:0"><h2 id="hMarkets">Principais mercados</h2><p class="sub">Top 10 + Demais</p><div id="markets"></div></section><section class="section" style="margin-top:0"><h2 id="hUf">Origem das exportações</h2><p class="sub">Top 5 UFs + Demais</p><div id="ufs"></div></section></div>
 <section class="section"><h2>Balança comercial</h2><p class="sub">Exportação × Importação × saldo para o produto e período.</p><div class="balance"><div class="card"><span>Exportações</span><strong id="bExp">—</strong><small id="bExpR">—</small></div><div class="card"><span>Importações</span><strong id="bImp">—</strong><small id="bImpR">—</small></div><div class="card"><span>Saldo</span><strong id="bSal">—</strong><small id="bSalR">—</small></div></div></section>
 <section class="section" id="comexDetails"><h2>Comércio Exterior · dados e competências</h2><p class="sub" id="comexPeriod"></p><p id="comexDimensions" class="notice"></p><div class="balance"><div class="card"><span>Saldo em volume</span><strong id="comexVolumeBalance"></strong></div></div><h3>Valores mensais · 2026</h3><button id="comexExportMonthly">Exportar CSV mensal 2026</button><p class="notice">Novembro e dezembro não disponíveis. Valores em reais pendentes de câmbio validado.</p><div id="comexMonthlyChart" class="chart" aria-label="Gráfico mensal 2026"></div><div style="overflow-x:auto"><table class="monthtable"><thead><tr><th>Mês</th><th>US$ FOB</th><th>Kg líquido</th><th>Toneladas</th><th>US$/kg</th></tr></thead><tbody id="comexMonthlyTable"></tbody></table></div><h3>Série anual do filtro</h3><div style="overflow-x:auto"><table class="monthtable"><thead><tr><th>Ano / competência</th><th>US$ FOB</th><th>Kg líquido</th><th>US$/kg</th></tr></thead><tbody id="comexAnnualTable"></tbody></table></div></section>
@@ -82,7 +84,7 @@
   </div>
 
   <section class="section">
-    <h2>Evolução da Produção Nacional</h2>
+    <h2>Evolução da Produção Nacional</h2><p class="notice" id="historicalSourceValidation">Fontes históricas conciliadas: SITE OFICIAL - DADOS ARESB 2006 - 2018.xlsx e sua cópia equivalente representam uma única fonte documental. As 11 safras de 2007–2017 foram conferidas; 2009 permanece em 82.984 t. Série histórica até 2024 preservada.</p>
     <p class="sub">Estimativa anual em toneladas. Clique em uma barra para selecionar o ano.</p>
     <div class="detail" id="pDetail"></div>
     <div class="chartbox">
@@ -117,10 +119,10 @@
 </div>
 
 <div id="preco" style="display:none">
-  <div class="notice">Preço Médio da Goma Resina — FOB/Fazenda · série mensal ARESB 2013–jul/2026. Elliottii e Tropical permanecem separados; registros de quinzena são preservados nas observações.</div>
+  <div class="notice">Preços realizados até outubro de 2026 · Preço Médio da Goma Resina — FOB/Fazenda · série mensal ARESB 2013–out/2026. Elliottii e Tropical permanecem separados; registros de quinzena são preservados nas observações.</div>
   <div class="filters" style="grid-template-columns:1fr 1fr 1fr">
     <div><label>Visualização</label><select id="precoTipo"><option value="both">Comparar Elliottii × Tropical</option><option value="E">Elliottii</option><option value="T">Tropical</option></select></div>
-    <div><label>Moeda</label><select id="precoMoeda"><option value="BRL">R$ — Real</option><option value="USD">US$ — Dólar</option><option value="COMPARE">Comparar R$ × US$</option></select></div><div><label>Período</label><select id="precoAno"><option value="all">2013–2026 · Todo o período</option><option value="2026">2026 YTD (jan–jul)</option></select></div>
+    <div><label>Moeda</label><select id="precoMoeda"><option value="BRL">R$ — Real</option><option value="USD">US$ — Dólar</option><option value="COMPARE">Comparar R$ × US$</option></select></div><div><label>Período</label><select id="precoAno"><option value="all">2013–2026 · Todo o período</option><option value="2026">2026 YTD (jan–out)</option></select></div>
     
   </div>
   <div class="kpis" style="grid-template-columns:repeat(5,minmax(0,1fr))">
@@ -145,11 +147,11 @@
     <section class="section" style="margin-top:0"><h2>Valores mensais</h2><p class="sub" id="prTabSub">—</p><div style="overflow:auto"><table class="monthtable"><thead><tr><th>Mês</th><th>Elliottii</th><th>Tropical</th><th>Diferença</th></tr></thead><tbody id="prTable"></tbody></table></div></section>
     <section class="section" style="margin-top:0"><h2>Médias anuais</h2><p class="sub">Comparação da média de cada ano da série.</p><div id="prAnnual"></div></section>
   </div>
-  <section class="section"><h2>Metodologia do Preço</h2><div class="method">Série ARESB de <b>Preço Médio da Goma Resina — FOB/Fazenda</b>. Unidade original: R$/t. A aba US$/t usa o câmbio médio mensal oficial do Banco Central do Brasil, série SGS 3698. Na ausência temporária da consulta online, o sistema mantém o câmbio anual da Base Mestre apenas como fallback. Elliottii e Tropical são mantidos separadamente. Em anos com registro por quinzena, a informação original é preservada; para exibição mensal, esta Onda 3 usa a competência mais recente disponível daquele mês. 2026 contém dados de janeiro a julho.</div></section>
+  <p id="priceFXStatus" class="notice"></p><section class="section"><h2>Metodologia do Preço</h2><div class="method">Série ARESB de <b>Preço Médio da Goma Resina — FOB/Fazenda</b>. Unidade original: R$/t. A aba US$/t usa o câmbio médio mensal oficial do Banco Central do Brasil, série SGS 3698. Sem taxa mensal BCB disponível, US$/t permanece não disponível, sem substituir por taxa anual. Elliottii e Tropical são mantidos separadamente. Em anos com registro por quinzena, a informação original é preservada; para exibição mensal, esta Onda 3 usa a competência mais recente disponível daquele mês. Preços realizados até outubro de 2026. Novembro e dezembro não disponíveis.</div></section>
 </div>
 
 <div id="visaoGeral" style="display:none">
-  <div class="notice">Visão executiva integrada do setor · Produção Nacional + Preço da Goma Resina + Comércio Exterior. As disponibilidades de cada base são respeitadas: Produção até 2024; Preço até jul/2026; Comércio Exterior até out/2026.</div>
+  <div class="notice">Visão executiva integrada do setor · Produção Nacional + Preço da Goma Resina + Comércio Exterior. As disponibilidades de cada base são respeitadas: Produção até 2024; Preço até out/2026; Comércio Exterior até out/2026.</div>
 
   <div class="filters" style="grid-template-columns:1fr">
     <div><label>Período</label><select id="vgAno"></select></div>
@@ -201,7 +203,7 @@
     <div class="method">
       <b>Comércio Exterior:</b> 1997–2026, sendo 2026 realizado jan–out.
       <b>Produção Nacional:</b> 2007–2024. 
-      <b>Preço Fazenda:</b> 2013–jul/2026. 
+      <b>Preço Fazenda:</b> 2013–out/2026.
       Quando o ano selecionado não possui Produção Nacional, o painel exibe “último dado disponível: 2024”, sem criar projeções.
     </div>
   </section>
@@ -277,6 +279,8 @@ function update(){
   const p=per(),flow=$('fluxo').value,k=key(),x=sum(k,p),exp=sum(key('Exportação'),p),imp=sum(key('Importação'),p),hasBRL=x.brl!=null;
   $('lblValor').textContent='Valor '+(flow==='Exportação'?'exportado':'importado');
   $('kUsd').textContent=fmtUSD(x.u);$('kBrl').textContent=hasBRL?fmtBRL(x.brl):'R$ indisponível';
+  $('cBrl').parentElement.style.display=hasBRL?'block':'none';
+  $('cPr').parentElement.style.display=hasBRL?'block':'none';
   $('kFx').textContent=hasBRL&&x.u?'Câmbio médio: R$ '+(x.brl/x.u).toLocaleString('pt-BR',{maximumFractionDigits:4}):'Câmbio de 2026 pendente de validação';
   $('kVol').textContent=fmtN(x.t)+' t';$('kPusd').textContent='US$ '+x.p.toLocaleString('pt-BR',{maximumFractionDigits:4})+'/kg';
   $('kPbrl').textContent=hasBRL&&x.kg?'R$ '+(x.brl/x.kg).toLocaleString('pt-BR',{maximumFractionDigits:4})+'/kg':'R$ indisponível';
@@ -356,49 +360,11 @@ const oldHome=$('navHome').onclick;$('navHome').onclick=()=>{$('producao').style
 const oldComex=$('navComex').onclick;$('navComex').onclick=()=>{$('producao').style.display='none';$('navProd').classList.remove('active');oldComex()};
 
 
-const PRICE={"2013":{"E":[1434.17,1468.68,1491.82,1493.64,1497.88,1514.17,1555.0,1581.25,1895.25,3133.33,3411.25,3060.0],"T":[1340.78,1400.29,1427.29,1430.14,1455.17,1463.0,1488.75,1513.0,1777.5,3050.0,3261.25,2836.0]},"2014":{"E":[2997.5,3230.0,3350.0,3230.0,3215.0,3162.5,2912.5,2825.0,2850.0,2875.0,2850.0,2837.5],"T":[2893.33,3190.0,3260.0,3145.0,3077.5,3030.0,2905.0,2675.0,2825.0,2800.0,2750.0,2762.5]},"2015":{"E":[2862.5,2836.67,2872.5,2857.5,2812.5,2787.5,2800.0,2825.0,2846.0,2918.0,3000.0,3062.5],"T":[2787.5,2770.0,2802.5,2795.0,2747.5,2735.0,2737.5,2750.0,2800.0,2902.5,2916.67,3012.5]},"2016":{"E":[3045.0,2966.0,2962.5,2780.88,2703.2,2708.89,2522.78,2319.27,1989.0,2150.42,2196.79,2623.0],"T":[2975.5,2987.5,2962.5,2720.97,2659.11,2760.0,2506.11,2287.5,1983.0,2118.5,2181.21,2611.0],"notes":{"set":"2ª quinzena usada no valor mensal exibido; 1ª quinzena: Elliottii R$ 1.999,60 / Tropical R$ 1.970,80"}},"2017":{"E":[2460,2490,2450,2475,2470,2446,2416,2450,2504,2550,2637,2775],"T":[2420,2450,2400,2437,2420,2394,2384,2440,2484,2512,2587,2725]},"2018":{"E":[2900,2992,3112,3074,2930,2920,2982,3010,3055,3242,3350,3425],"T":[2862,2942,3050,3023,2843,2813,2865,2963,3002.5,3167,3262,3325]},"2019":{"E":[3425,3410,3392,3418,3445,3397,3305,2955,2625,2232,2200,2158],"T":[3325,3310,3292,3318,3342,3285,3205,2880,2550,2282,2175,2108],"notes":{"out":"Elliottii: valor indicado como 2ª quinzena na fonte"}},"2020":{"E":[2257,2257,2257,2207,2207,2220,2320,2432,2607,2926,4122,4668],"T":[2182,2182,2177,2157,2157,2170,2282,2395,2545,2835,4050,4606]},"2021":{"E":[4212,4934,5145,5115,5996,6652,6896,6506,6397,6817,7710,8255],"T":[4184,4873,5073,5037,5926,6572,6835,6428,6315,6775,7580,8155]},"2022":{"E":[8355,8550,7608,6650,6304,6230,6344,6354,6360,6380,5770,5560],"T":[8255,8460,7517,6570,6203,6102,6220,6232,6240,6270,5670,5480]},"2023":{"E":[4700,4590,4160,3470,3440,3380,3320,2790,2510,2600,3020,3370],"T":[4610,4490,4060,3370,3340,3280,3240,2710,2420,2500,2940,3270],"notes":{"ago":"Valor de agosto identificado como 2ª quinzena na fonte"}},"2024":{"E":[3520,3680,4015,4160,4180,4160,4130,4150,4150,4380,4470,4680],"T":[3430,3590,3920,4070,4090,4070,4050,4070,4070,4290,4390,4610]},"2025":{"E":[4700,4660,4620,4610,4150,4090,4310,4596,4880,5100,5170,5170],"T":[4620,4590,4530,4520,4060,3990,4220,4501,4790,5000,5070,5080]},"2026":{"E":[5130,4810,4570,4990,5320,5710,6110],"T":[5030,4710,4470,4890,5220,5610,6010]}},MON=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const PRICE_SOURCE={"year":2026,"endMonth":10,"unit":"R$/t","source":"Valores confirmados por Marcelo no pedido de implementação local da Onda 2","receivedDate":"2026-11-13","status":"Realizado; confirmação recebida do responsável","E":[5130,4810,4570,4990,5320,5710,6110,6450,6660,7040],"T":[5030,4710,4470,4890,5220,5610,6010,6350,6560,6940]};
+const PRICE={"2013":{"E":[1434.17,1468.68,1491.82,1493.64,1497.88,1514.17,1555,1581.25,1895.25,3133.33,3411.25,3060],"T":[1340.78,1400.29,1427.29,1430.14,1455.17,1463,1488.75,1513,1777.5,3050,3261.25,2836]},"2014":{"E":[2997.5,3230,3350,3230,3215,3162.5,2912.5,2825,2850,2875,2850,2837.5],"T":[2893.33,3190,3260,3145,3077.5,3030,2905,2675,2825,2800,2750,2762.5]},"2015":{"E":[2862.5,2836.67,2872.5,2857.5,2812.5,2787.5,2800,2825,2846,2918,3000,3062.5],"T":[2787.5,2770,2802.5,2795,2747.5,2735,2737.5,2750,2800,2902.5,2916.67,3012.5]},"2016":{"E":[3045,2966,2962.5,2780.88,2703.2,2708.89,2522.78,2319.27,1989,2150.42,2196.79,2623],"T":[2975.5,2987.5,2962.5,2720.97,2659.11,2760,2506.11,2287.5,1983,2118.5,2181.21,2611],"notes":{"set":"2ª quinzena usada no valor mensal exibido; 1ª quinzena: Elliottii R$ 1.999,60 / Tropical R$ 1.970,80"}},"2017":{"E":[2460,2490,2450,2475,2470,2446,2416,2450,2504,2550,2637,2775],"T":[2420,2450,2400,2437,2420,2394,2384,2440,2484,2512,2587,2725]},"2018":{"E":[2900,2992,3112,3074,2930,2920,2982,3010,3055,3242,3350,3425],"T":[2862,2942,3050,3023,2843,2813,2865,2963,3002.5,3167,3262,3325]},"2019":{"E":[3425,3410,3392,3418,3445,3397,3305,2955,2625,2232,2200,2158],"T":[3325,3310,3292,3318,3342,3285,3205,2880,2550,2282,2175,2108],"notes":{"out":"Elliottii: valor indicado como 2ª quinzena na fonte"}},"2020":{"E":[2257,2257,2257,2207,2207,2220,2320,2432,2607,2926,4122,4668],"T":[2182,2182,2177,2157,2157,2170,2282,2395,2545,2835,4050,4606]},"2021":{"E":[4212,4934,5145,5115,5996,6652,6896,6506,6397,6817,7710,8255],"T":[4184,4873,5073,5037,5926,6572,6835,6428,6315,6775,7580,8155]},"2022":{"E":[8355,8550,7608,6650,6304,6230,6344,6354,6360,6380,5770,5560],"T":[8255,8460,7517,6570,6203,6102,6220,6232,6240,6270,5670,5480]},"2023":{"E":[4700,4590,4160,3470,3440,3380,3320,2790,2510,2600,3020,3370],"T":[4610,4490,4060,3370,3340,3280,3240,2710,2420,2500,2940,3270],"notes":{"ago":"Valor de agosto identificado como 2ª quinzena na fonte"}},"2024":{"E":[3520,3680,4015,4160,4180,4160,4130,4150,4150,4380,4470,4680],"T":[3430,3590,3920,4070,4090,4070,4050,4070,4070,4290,4390,4610]},"2025":{"E":[4700,4660,4620,4610,4150,4090,4310,4596,4880,5100,5170,5170],"T":[4620,4590,4530,4520,4060,3990,4220,4501,4790,5000,5070,5080]},"2026":{"E":[5130,4810,4570,4990,5320,5710,6110,6450,6660,7040],"T":[5030,4710,4470,4890,5220,5610,6010,6350,6560,6940]}},MON=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
 for(let y=2025;y>=2013;y--){let o=document.createElement('option');o.value=y;o.textContent=y;$('precoAno').appendChild(o)}
 const PRICEFX={1997: 1.077883, 1998: 1.16035, 1999: 1.81915, 2000: 1.830975, 2001: 2.353067, 2002: 2.923475, 2003: 3.079283, 2004: 2.926667, 2005: 2.434192, 2006: 2.1738, 2007: 1.94685, 2008: 1.835358, 2009: 1.999117, 2010: 1.760208, 2011: 1.673725, 2012: 1.953025, 2013: 2.157008, 2014: 2.3544, 2015: 3.332683, 2016: 3.488442, 2017: 3.190992, 2018: 3.653942, 2019: 3.942342, 2020: 5.157458, 2021: 5.395833, 2022: 5.165533, 2023: 4.99435, 2024: 5.389167, 2025: 5.588133, 2026: 5.144129};
-function pConv(v,y){return $('precoMoeda')&&$('precoMoeda').value==='USD'?Number(v||0)/(PRICEFX[y]||1):Number(v||0)}
-function rMoney(v,y){let usd=$('precoMoeda')&&$('precoMoeda').value==='USD',x=y?pConv(v,y):Number(v||0);return (usd?'US$ ':'R$ ')+x.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+'/t'}
-function seriesStats(a){let vals=a.filter(v=>v!=null),first=vals[0],last=vals[vals.length-1];return{avg:vals.reduce((s,v)=>s+v,0)/vals.length,max:Math.max(...vals),min:Math.min(...vals),chg:first?((last/first)-1)*100:0,last}}
-function priceDraw(y){let svg=$('precoChart'),raw=PRICE[y],d={...raw,E:raw.E.map(v=>pConv(v,y)),T:raw.T.map(v=>pConv(v,y))},typ=$('precoTipo').value,arrs=typ==='E'?[['E','#0b604a']]:typ==='T'?[['T','#4d93c4']]:[['E','#0b604a'],['T','#4d93c4']],all=arrs.flatMap(x=>d[x[0]]),mn=Math.min(...all),mx=Math.max(...all),pad=(mx-mn)*.12||100,min=mn-pad,max=mx+pad,n=Math.max(...arrs.map(x=>d[x[0]].length));let sx=i=>55+i*(900/(n-1||1)),sy=v=>260-(v-min)/(max-min)*220;let out='';for(let g=0;g<5;g++){let yy=40+g*55,val=max-(max-min)*g/4;out+=`<line x1="50" y1="${yy}" x2="970" y2="${yy}" stroke="#e5ece8" stroke-width="1"/><text x="5" y="${yy+4}" font-size="10" fill="#71837b">${Math.round(val).toLocaleString('pt-BR')}</text>`}arrs.forEach(([k,c])=>{let a=d[k],pts=a.map((v,i)=>`${sx(i)},${sy(v)}`).join(' ');out+=`<polyline points="${pts}" fill="none" stroke="${c}" stroke-width="3" vector-effect="non-scaling-stroke"/>`;a.forEach((v,i)=>{let label=MON[i]+'/'+String(y).slice(2);out+=`<circle cx="${sx(i)}" cy="${sy(v)}" r="5" fill="${c}"><title>${label} · ${k==='E'?'Elliottii':'Tropical'} · ${rMoney(v)}</title></circle>`})});for(let i=0;i<n;i++)out+=`<text x="${sx(i)}" y="286" text-anchor="middle" font-size="10" fill="#71837b">${MON[i]}</text>`;svg.innerHTML=out}
-function priceTable(y){let raw=PRICE[y],d={...raw,E:raw.E.map(v=>pConv(v,y)),T:raw.T.map(v=>pConv(v,y))},n=Math.max(d.E.length,d.T.length),tb=$('prTable');tb.innerHTML='';for(let i=0;i<n;i++){let e=d.E[i],t=d.T[i],diff=(e!=null&&t!=null)?e-t:null;tb.insertAdjacentHTML('beforeend',`<tr><td>${MON[i]}/${String(y).slice(2)}</td><td>${rMoney(e)}</td><td>${rMoney(t)}</td><td>${diff==null?'—':rMoney(diff)}</td></tr>`)}$('prTabSub').textContent=y===2026?'2026 YTD · janeiro a julho':String(y);if(d.notes){Object.entries(d.notes).forEach(([m,note])=>tb.insertAdjacentHTML('beforeend',`<tr><td colspan="4" style="text-align:left;color:#6d7f77"><b>Observação:</b> ${note}</td></tr>`))}}
-function priceAnnual(){let box=$('prAnnual');box.innerHTML='';Object.keys(PRICE).sort((a,b)=>b-a).forEach(y=>{let e=pConv(seriesStats(PRICE[y].E).avg,Number(y)),t=pConv(seriesStats(PRICE[y].T).avg,Number(y));box.insertAdjacentHTML('beforeend',`<div class="rank"><span>${y}</span><b>E ${rMoney(e)} · T ${rMoney(t)}</b><em>${rMoney(e-t)}</em></div>`)})}
-function priceUpdate(){let pv=$('precoAno').value,typ=$('precoTipo').value,usd=$('precoMoeda').value==='USD',compare=$('precoMoeda').value==='COMPARE';
-$('precoChart').parentElement.style.display=compare?'none':'block';
-$('precoCompareWrap').style.display=compare?'block':'none';
-if(compare){setTimeout(()=>{drawPriceExplicit('precoChartBRL',pv,'BRL');drawPriceExplicit('precoChartUSD',pv,'USD')},0);}
-document.querySelector('#preco .section .sub').textContent=compare?'Comparação R$/t × US$/t em dois gráficos alinhados. US$ convertido pelo câmbio médio mensal BCB/SGS 3698. Passe o mouse sobre os pontos para consultar cada período.':'Preço Fazenda em '+(usd?'US$/t':'R$/t')+'. Passe o mouse sobre os pontos para consultar cada período.';
-if(pv==='all'){
-  let years=Object.keys(PRICE).map(Number).sort((a,b)=>a-b);
-  let eAvg=years.map(y=>pConv(seriesStats(PRICE[y].E).avg,y)),tAvg=years.map(y=>pConv(seriesStats(PRICE[y].T).avg,y));
-  let chosen=typ==='T'?tAvg:eAvg,latest=years[years.length-1],first=years[0];
-  $('prAtual').textContent=rMoney(chosen[chosen.length-1]);
-  $('prAtualT').textContent=(typ==='both'?'Tropical: '+rMoney(tAvg[tAvg.length-1]):'Média '+latest+(latest===2026?' YTD':''));
-  $('prMedia').textContent=rMoney(chosen.reduce((s,v)=>s+v,0)/chosen.length);
-  $('prMediaT').textContent=typ==='both'?'Tropical: '+rMoney(tAvg.reduce((s,v)=>s+v,0)/tAvg.length):'Média das médias anuais';
-  $('prMax').textContent=rMoney(Math.max(...chosen)); $('prMaxT').textContent='Maior média anual';
-  $('prMin').textContent=rMoney(Math.min(...chosen)); $('prMinT').textContent='Menor média anual';
-  $('prVar').textContent=((chosen[chosen.length-1]/chosen[0]-1)*100).toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
-  $('prDif').textContent='2013 → 2026 YTD';
-  let svg=$('precoChart'),arrs=typ==='E'?[['E','#0b604a',eAvg]]:typ==='T'?[['T','#4d93c4',tAvg]]:[['E','#0b604a',eAvg],['T','#4d93c4',tAvg]],
-      all=arrs.flatMap(x=>x[2]),mn=Math.min(...all),mx=Math.max(...all),pad=(mx-mn)*.12||100,min=mn-pad,max=mx+pad,
-      sx=i=>55+i*(900/(years.length-1)),sy=v=>260-(v-min)/(max-min)*220,out='';
-  for(let g=0;g<5;g++){let yy=40+g*55,val=max-(max-min)*g/4;out+=`<line x1="50" y1="${yy}" x2="970" y2="${yy}" stroke="#e5ece8" stroke-width="1"/><text x="5" y="${yy+4}" font-size="10" fill="#71837b">${Math.round(val).toLocaleString('pt-BR')}</text>`}
-  arrs.forEach(([k,c,a])=>{out+=`<polyline points="${a.map((v,i)=>`${sx(i)},${sy(v)}`).join(' ')}" fill="none" stroke="${c}" stroke-width="3" vector-effect="non-scaling-stroke"/>`;a.forEach((v,i)=>out+=`<circle cx="${sx(i)}" cy="${sy(v)}" r="5" fill="${c}"><title>${years[i]} · média ${k==='E'?'Elliottii':'Tropical'} · ${rMoney(v)}</title></circle>`)});
-  years.forEach((y,i)=>out+=`<text x="${sx(i)}" y="286" text-anchor="middle" font-size="9" fill="#71837b">${y}</text>`);svg.innerHTML=out;
-  $('prTabSub').textContent='Médias anuais · 2013–2026 YTD';let tb=$('prTable');tb.innerHTML='';
-  years.forEach((y,i)=>tb.insertAdjacentHTML('beforeend',`<tr><td>${y}${y===2026?' YTD':''}</td><td>${rMoney(eAvg[i])}</td><td>${rMoney(tAvg[i])}</td><td>${rMoney(eAvg[i]-tAvg[i])}</td></tr>`));
-  priceAnnual();return;
-}
-let y=Number(pv),raw=PRICE[y],d={...raw,E:raw.E.map(v=>pConv(v,y)),T:raw.T.map(v=>pConv(v,y))},se=seriesStats(d.E),st=seriesStats(d.T),s=typ==='T'?st:se;
-$('prAtual').textContent=rMoney(s.last);$('prAtualT').textContent=typ==='both'?'Tropical: '+rMoney(st.last):(typ==='E'?'Elliottii':'Tropical');
-$('prMedia').textContent=rMoney(s.avg);$('prMediaT').textContent=typ==='both'?'Tropical: '+rMoney(st.avg):'';
-$('prMax').textContent=rMoney(s.max);$('prMaxT').textContent=typ==='both'?'Tropical: '+rMoney(st.max):'';
-$('prMin').textContent=rMoney(s.min);$('prMinT').textContent=typ==='both'?'Tropical: '+rMoney(st.min):'';
-$('prVar').textContent=s.chg.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
-$('prDif').textContent='Diferença atual E − T: '+rMoney(se.last-st.last);priceDraw(y);priceTable(y);priceAnnual()}
+function priceUpdate(){}
 $('precoAno').onchange=priceUpdate;$('precoTipo').onchange=priceUpdate;$('precoMoeda').onchange=priceUpdate;
 $('navPreco').onclick=()=>{$('home').style.display='none';$('comex').style.display='none';$('producao').style.display='none';$('preco').style.display='block';['navHome','navComex','navProd'].forEach(id=>$(id).classList.remove('active'));$('navPreco').classList.add('active');priceUpdate()};
 const h0=$('navHome').onclick;$('navHome').onclick=()=>{$('preco').style.display='none';$('navPreco').classList.remove('active');h0()};
@@ -422,6 +388,7 @@ function vgSector(flow,y){
   });
   return out;
 }
+function vgPriceMoney(v){return 'R$ '+Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+'/t'}
 function vgAnnualPrice(y,k){
   if(!PRICE[y]||!PRICE[y][k]) return null;
   let a=PRICE[y][k].filter(v=>v!=null);
@@ -457,8 +424,8 @@ function vgUpdate(){
     let tPrices=years.filter(yy=>vgAnnualPrice(yy,'T')!=null).map(yy=>vgAnnualPrice(yy,'T'));
     let pe=ePrices.reduce((s,v)=>s+v,0)/ePrices.length,pt=tPrices.reduce((s,v)=>s+v,0)/tPrices.length;
     $('vgProd').textContent=pFmt(prodSum);$('vgProdN').textContent='Somatório · dados de produção 2013–2024';
-    $('vgPE').textContent=rMoney(pe);$('vgPEN').textContent='Média histórica · 2013–2026 YTD';
-    $('vgPT').textContent=rMoney(pt);$('vgPTN').textContent='Média histórica · 2013–2026 YTD';
+    $('vgPE').textContent=vgPriceMoney(pe);$('vgPEN').textContent='Média histórica · 2013–2026 YTD';
+    $('vgPT').textContent=vgPriceMoney(pt);$('vgPTN').textContent='Média histórica · 2013–2026 YTD';
     $('vgExp').textContent=vgFmtUSD(exp.u);$('vgExpR').textContent=vgFmtBRL(exp.brl);
     $('vgImp').textContent=vgFmtUSD(imp.u);$('vgImpR').textContent=vgFmtBRL(imp.brl);
     $('vgSaldo').textContent=vgFmtUSD(saldoU);$('vgSaldoR').textContent=vgFmtBRL(saldoR);
@@ -479,8 +446,8 @@ function vgUpdate(){
   }else{
     $('vgProd').textContent=pFmt(PROD.totals[2024]);$('vgProdN').textContent='Último dado disponível: 2024';
   }
-  $('vgPE').textContent=pe!=null?rMoney(pe):'—';$('vgPEN').textContent=y===2026?'Média jan–jul/2026':'Média anual';
-  $('vgPT').textContent=pt!=null?rMoney(pt):'—';$('vgPTN').textContent=y===2026?'Média jan–jul/2026':'Média anual';
+  $('vgPE').textContent=pe!=null?vgPriceMoney(pe):'—';$('vgPEN').textContent=y===2026?'Média jan–out/2026':'Média anual';
+  $('vgPT').textContent=pt!=null?vgPriceMoney(pt):'—';$('vgPTN').textContent=y===2026?'Média jan–out/2026':'Média anual';
   $('vgExp').textContent=vgFmtUSD(exp.u);$('vgExpR').textContent=vgFmtBRL(exp.brl);
   $('vgImp').textContent=vgFmtUSD(imp.u);$('vgImpR').textContent=vgFmtBRL(imp.brl);
   $('vgSaldo').textContent=vgFmtUSD(saldoU);$('vgSaldoR').textContent=vgFmtBRL(saldoR);
@@ -501,7 +468,7 @@ function vgUpdate(){
   });
 
   let prodText=PROD.totals[y]?('produção estimada de '+pFmt(PROD.totals[y])):('produção com último dado disponível em 2024: '+pFmt(PROD.totals[2024]));
-  let priceText=pe!=null?('preço médio Elliottii de '+rMoney(pe)+' e Tropical de '+rMoney(pt)):'preço Fazenda indisponível';
+  let priceText=pe!=null?('preço médio Elliottii de '+vgPriceMoney(pe)+' e Tropical de '+vgPriceMoney(pt)):'preço Fazenda indisponível';
   $('vgInsight').innerHTML='<b>'+y+(y===2026?' YTD':'')+':</b> '+prodText+', '+priceText+', exportações setoriais de '+vgFmtUSD(exp.u)+' e saldo comercial de '+vgFmtUSD(saldoU)+'.';
 }
 $('vgAno').onchange=vgUpdate;
@@ -531,7 +498,7 @@ const _vgHideAll=vgHideAll;vgHideAll=function(){_vgHideAll();if($('historico'))$
 
 
 // ===== Onda 5 · acabamento, download e governança =====
-const ARESB_VERSION='V1.0', ARESB_UPDATED='Comex out/2026; preços jul/2026; produção 2024';
+const ARESB_VERSION='V1.2 — candidata à publicação', ARESB_UPDATED='Comex out/2026; preços out/2026; produção 2024';
 
 function csvEscape(v){
   let s=String(v??'');
@@ -591,12 +558,12 @@ $('comexExportMonthly').onclick=comexExportMonthly;
     <h2>Metodologia e Fontes</h2>
     <p><b>Comércio Exterior (1997–2026):</b> Base Mestre derivada de dados Comex Stat/MDIC, com Resina, Breu e Terebintina, Exportação e Importação. Valores em R$ são derivados pelo câmbio médio registrado na Base Mestre. 2026 = realizado jan–out. Rankings disponíveis até julho de 2026; R$ de 2026 pendente.</p>
     <p><b>Produção Nacional (2007–2024):</b> Estimativa ARESB de Goma Resina de Pinus. Para 2007–2017, o ano estatístico corresponde ao ano inicial das antigas safras. Elliottii + Tropical + Híbrido são consolidados no indicador principal.</p>
-    <p><b>Preço da Goma Resina (2013–jul/2026):</b> Série ARESB em R$/t, com Elliottii e Tropical separados. A visão em US$/t é calculada pela conversão com o câmbio médio da Base Mestre. Registros de quinzena são preservados em observações.</p>
+    <p><b>Preço da Goma Resina (2013–out/2026):</b> Série ARESB em R$/t, com Elliottii e Tropical separados. A visão em US$/t divide R$/t pelo câmbio mensal BCB SGS 3698; meses sem taxa ficam não disponíveis. Registros de quinzena são preservados em observações.</p>
     <p><b>Arquivo Histórico (1989–1996):</b> acervo histórico ARESB/AliceWeb preservado para consulta e memória institucional. Não alimenta a série oficial do painel 1997–2026.</p>
     <p><b>Governança:</b> dados estimados, lacunas, correções e anomalias devem permanecer identificados. Nenhuma correção histórica deve ser feita silenciosamente.</p>
   </div>
 </div>
-<div class="footer-final">ARESB Estatísticas V1.0 · Base consolidada em ondas · Comex: out/2026 · Preços: jul/2026 · Produção: 2024</div>
+<div class="footer-final">ARESB Estatísticas V1.2 — candidata à publicação · Base consolidada em ondas · Comex: out/2026 · Preços: out/2026 · Produção: 2024</div>
 
 <script>
 (function(){
@@ -612,29 +579,6 @@ $('comexExportMonthly').onclick=comexExportMonthly;
     if(e.key==='Escape') closeMethodology();
   });
 })();
-
-function drawPriceExplicit(svgId,y,mode){
-  let svg=$(svgId),typ=$('precoTipo').value;
-  function cv(v,yy){return mode==='USD'?Number(v||0)/(PRICEFX[yy]||1):Number(v||0)}
-  let yearsMode=String(y)==='all';
-  if(yearsMode){
-    let years=Object.keys(PRICE).map(Number).sort((a,b)=>a-b);
-    let e=years.map(yy=>cv(seriesStats(PRICE[yy].E).avg,yy)),t=years.map(yy=>cv(seriesStats(PRICE[yy].T).avg,yy));
-    let arrs=typ==='E'?[['E','#0b604a',e]]:typ==='T'?[['T','#4d93c4',t]]:[['E','#0b604a',e],['T','#4d93c4',t]];
-    let all=arrs.flatMap(x=>x[2]),mn=Math.min(...all),mx=Math.max(...all),pad=(mx-mn)*.12||1,min=mn-pad,max=mx+pad,
-        sx=i=>55+i*(900/(years.length-1)),sy=v=>260-(v-min)/(max-min)*220,out='';
-    for(let g=0;g<5;g++){let yy=40+g*55,val=max-(max-min)*g/4;out+=`<line x1="50" y1="${yy}" x2="970" y2="${yy}" stroke="#e5ece8"/><text x="5" y="${yy+4}" font-size="10" fill="#71837b">${Math.round(val).toLocaleString('pt-BR')}</text>`}
-    arrs.forEach(([k,c,a])=>{out+=`<polyline points="${a.map((v,i)=>`${sx(i)},${sy(v)}`).join(' ')}" fill="none" stroke="${c}" stroke-width="3" vector-effect="non-scaling-stroke"/>`;a.forEach((v,i)=>out+=`<circle cx="${sx(i)}" cy="${sy(v)}" r="5" fill="${c}"><title>${years[i]} · ${k==='E'?'Elliottii':'Tropical'} · ${mode==='USD'?'US$ ':'R$ '}${v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}/t</title></circle>`)});
-    years.forEach((yy,i)=>out+=`<text x="${sx(i)}" y="286" text-anchor="middle" font-size="9" fill="#71837b">${yy}</text>`);svg.innerHTML=out;return;
-  }
-  y=Number(y);let raw=PRICE[y],d={E:raw.E.map(v=>cv(v,y)),T:raw.T.map(v=>cv(v,y))},arrs=typ==='E'?[['E','#0b604a']]:typ==='T'?[['T','#4d93c4']]:[['E','#0b604a'],['T','#4d93c4']],
-      all=arrs.flatMap(x=>d[x[0]]),mn=Math.min(...all),mx=Math.max(...all),pad=(mx-mn)*.12||1,min=mn-pad,max=mx+pad,n=Math.max(...arrs.map(x=>d[x[0]].length)),
-      sx=i=>55+i*(900/(n-1||1)),sy=v=>260-(v-min)/(max-min)*220,out='';
-  for(let g=0;g<5;g++){let yy=40+g*55,val=max-(max-min)*g/4;out+=`<line x1="50" y1="${yy}" x2="970" y2="${yy}" stroke="#e5ece8"/><text x="5" y="${yy+4}" font-size="10" fill="#71837b">${Math.round(val).toLocaleString('pt-BR')}</text>`}
-  arrs.forEach(([k,c])=>{let a=d[k];out+=`<polyline points="${a.map((v,i)=>`${sx(i)},${sy(v)}`).join(' ')}" fill="none" stroke="${c}" stroke-width="3" vector-effect="non-scaling-stroke"/>`;a.forEach((v,i)=>out+=`<circle cx="${sx(i)}" cy="${sy(v)}" r="5" fill="${c}"><title>${MON[i]}/${String(y).slice(2)} · ${k==='E'?'Elliottii':'Tropical'} · ${mode==='USD'?'US$ ':'R$ '}${v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}/t</title></circle>`)});
-  for(let i=0;i<n;i++)out+=`<text x="${sx(i)}" y="286" text-anchor="middle" font-size="10" fill="#71837b">${MON[i]}</text>`;svg.innerHTML=out;
-}
-
 
 // ===== Câmbio mensal oficial BCB · SGS 3698 =====
 const FX_MONTHLY={};
@@ -654,66 +598,77 @@ async function loadMonthlyFX(){
     FX_MONTHLY_READY=Object.keys(FX_MONTHLY).length>0;
     if(FX_MONTHLY_READY && document.getElementById('preco') && document.getElementById('preco').style.display!=='none') priceUpdate();
   }catch(e){
-    console.warn('Câmbio mensal BCB indisponível; mantendo fallback anual.',e);
+    console.warn('Câmbio mensal BCB indisponível; conversão em US$/t permanece não disponível.',e);
   }
 }
-function fxFor(y,m){
-  let key=String(y)+'-'+String(m+1).padStart(2,'0');
-  return FX_MONTHLY[key] || PRICEFX[y] || 1;
-}
-function convertMonthly(v,y,m){
-  return Number(v||0)/fxFor(y,m);
-}
-function annualUSDMean(y,k){
-  let a=(PRICE[y]&&PRICE[y][k])||[];
-  if(!a.length)return null;
-  let vals=a.map((v,i)=>convertMonthly(v,y,i));
-  return vals.reduce((s,v)=>s+v,0)/vals.length;
-}
-
-// Override explicit comparison chart so US$ uses each month's exchange rate.
-drawPriceExplicit=function(svgId,y,mode){
-  let svg=$(svgId),typ=$('precoTipo').value,yearsMode=String(y)==='all';
-  if(yearsMode){
-    let years=Object.keys(PRICE).map(Number).sort((a,b)=>a-b);
-    let make=k=>years.map(yy=>mode==='USD'?annualUSDMean(yy,k):seriesStats(PRICE[yy][k]).avg);
-    let e=make('E'),t=make('T');
-    let arrs=typ==='E'?[['E','#0b604a',e]]:typ==='T'?[['T','#4d93c4',t]]:[['E','#0b604a',e],['T','#4d93c4',t]];
-    let all=arrs.flatMap(x=>x[2]).filter(v=>v!=null),mn=Math.min(...all),mx=Math.max(...all),pad=(mx-mn)*.12||1,min=mn-pad,max=mx+pad,
-        sx=i=>55+i*(900/(years.length-1)),sy=v=>260-(v-min)/(max-min)*220,out='';
-    for(let g=0;g<5;g++){let yy=40+g*55,val=max-(max-min)*g/4;out+=`<line x1="50" y1="${yy}" x2="970" y2="${yy}" stroke="#e5ece8"/><text x="5" y="${yy+4}" font-size="10" fill="#71837b">${Math.round(val).toLocaleString('pt-BR')}</text>`}
-    arrs.forEach(([k,c,a])=>{out+=`<polyline points="${a.map((v,i)=>`${sx(i)},${sy(v)}`).join(' ')}" fill="none" stroke="${c}" stroke-width="3" vector-effect="non-scaling-stroke"/>`;a.forEach((v,i)=>out+=`<circle cx="${sx(i)}" cy="${sy(v)}" r="5" fill="${c}"><title>${years[i]} · ${k==='E'?'Elliottii':'Tropical'} · ${mode==='USD'?'US$ ':'R$ '}${v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}/t</title></circle>`)});
-    years.forEach((yy,i)=>out+=`<text x="${sx(i)}" y="286" text-anchor="middle" font-size="9" fill="#71837b">${yy}</text>`);svg.innerHTML=out;return;
-  }
-  y=Number(y);let raw=PRICE[y];
-  let conv=(v,i)=>mode==='USD'?convertMonthly(v,y,i):Number(v||0);
-  let d={E:raw.E.map(conv),T:raw.T.map(conv)},arrs=typ==='E'?[['E','#0b604a']]:typ==='T'?[['T','#4d93c4']]:[['E','#0b604a'],['T','#4d93c4']],
-      all=arrs.flatMap(x=>d[x[0]]),mn=Math.min(...all),mx=Math.max(...all),pad=(mx-mn)*.12||1,min=mn-pad,max=mx+pad,n=Math.max(...arrs.map(x=>d[x[0]].length)),
-      sx=i=>55+i*(900/(n-1||1)),sy=v=>260-(v-min)/(max-min)*220,out='';
-  for(let g=0;g<5;g++){let yy=40+g*55,val=max-(max-min)*g/4;out+=`<line x1="50" y1="${yy}" x2="970" y2="${yy}" stroke="#e5ece8"/><text x="5" y="${yy+4}" font-size="10" fill="#71837b">${Math.round(val).toLocaleString('pt-BR')}</text>`}
-  arrs.forEach(([k,c])=>{let a=d[k];out+=`<polyline points="${a.map((v,i)=>`${sx(i)},${sy(v)}`).join(' ')}" fill="none" stroke="${c}" stroke-width="3" vector-effect="non-scaling-stroke"/>`;a.forEach((v,i)=>out+=`<circle cx="${sx(i)}" cy="${sy(v)}" r="5" fill="${c}"><title>${MON[i]}/${String(y).slice(2)} · ${k==='E'?'Elliottii':'Tropical'} · ${mode==='USD'?'US$ ':'R$ '}${v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}/t${mode==='USD'?' · câmbio '+fxFor(y,i).toLocaleString('pt-BR',{minimumFractionDigits:4,maximumFractionDigits:4}):''}</title></circle>`)});
-  for(let i=0;i<n;i++)out+=`<text x="${sx(i)}" y="286" text-anchor="middle" font-size="10" fill="#71837b">${MON[i]}</text>`;svg.innerHTML=out;
-};
-
-// In standalone USD mode, use monthly FX for monthly chart/table as well.
-const _priceDrawMonthlyFX=priceDraw;
-priceDraw=function(y){
-  if($('precoMoeda').value!=='USD') return _priceDrawMonthlyFX(y);
-  drawPriceExplicit('precoChart',y,'USD');
-};
-const _priceTableMonthlyFX=priceTable;
-priceTable=function(y){
-  if($('precoMoeda').value!=='USD') return _priceTableMonthlyFX(y);
-  let raw=PRICE[y],n=Math.max(raw.E.length,raw.T.length),tb=$('prTable');tb.innerHTML='';
-  for(let i=0;i<n;i++){
-    let e=convertMonthly(raw.E[i],y,i),t=convertMonthly(raw.T[i],y,i),diff=e-t;
-    tb.insertAdjacentHTML('beforeend',`<tr><td>${MON[i]}/${String(y).slice(2)}</td><td>US$ ${e.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}/t</td><td>US$ ${t.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}/t</td><td>US$ ${diff.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}/t</td></tr>`);
-  }
-  $('prTabSub').textContent=(y===2026?'2026 YTD · janeiro a julho':String(y))+' · câmbio médio mensal BCB';
-};
-
 // Load after page construction.
 loadMonthlyFX();
 
+// Unified presentation for prices. Monthly BCB FX is optional; missing FX never becomes zero or an annual rate.
+function priceNumber(v,digits=2){return v==null?'Não disponível':v.toLocaleString('pt-BR',{minimumFractionDigits:digits,maximumFractionDigits:digits})}
+function priceMoney(v,currency='BRL'){return v==null?'Não disponível':(currency==='USD'?'US$ ':'R$ ')+priceNumber(v)+'/t'}
+function priceValues(year,species,currency='BRL'){
+  return PRICE[year][species].map((v,i)=>{
+    if(currency!=='USD')return v;
+    const rate=FX_MONTHLY[`${year}-${String(i+1).padStart(2,'0')}`];
+    return Number.isFinite(rate)&&rate>0?v/rate:null;
+  });
+}
+function priceStats(values){
+  if(!values.length||values.some(v=>!Number.isFinite(v)))return {avg:null,min:null,max:null,last:null,chg:null};
+  return {avg:values.reduce((s,v)=>s+v,0)/values.length,min:Math.min(...values),max:Math.max(...values),last:values.at(-1),chg:values[0]?(values.at(-1)/values[0]-1)*100:null};
+}
+function priceLine(svgId,labels,series,currency){
+  const svg=$(svgId),valid=series.flatMap(s=>s.values).filter(Number.isFinite);
+  svg.setAttribute('viewBox','0 0 1000 310');svg.setAttribute('role','img');
+  if(!valid.length){svg.innerHTML='<text x="50" y="135" fill="#64766e" font-size="18">US$/t não disponível: câmbio mensal BCB ausente.</text>';return}
+  const low=Math.min(...valid),high=Math.max(...valid),padding=(high-low)*.12||1,min=low-padding,max=high+padding;
+  const x=i=>65+i*890/Math.max(labels.length-1,1),y=v=>260-(v-min)/(max-min)*220;
+  let out='<title>Preços da goma-resina em '+(currency==='USD'?'US$/t':'R$/t')+'</title>';
+  for(let i=0;i<5;i++){const v=max-(max-min)*i/4,yy=y(v);out+=`<line x1="65" y1="${yy}" x2="955" y2="${yy}" stroke="#e5ece8"/><text x="2" y="${yy+4}" font-size="11" fill="#64766e">${Math.round(v).toLocaleString('pt-BR')}</text>`}
+  for(const s of series){let segment=[];
+    const flush=()=>{if(segment.length)out+=`<polyline points="${segment.join(' ')}" fill="none" stroke="${s.color}" stroke-width="3"/>`;segment=[]};
+    s.values.forEach((v,i)=>{if(v==null){flush();return}segment.push(x(i)+','+y(v));out+=`<circle cx="${x(i)}" cy="${y(v)}" r="4" fill="${s.color}"><title>${labels[i]} · ${s.label} · ${priceMoney(v,currency)}</title></circle>`});flush();
+  }
+  labels.forEach((label,i)=>{out+=`<text x="${x(i)}" y="290" text-anchor="middle" font-size="11" fill="#64766e">${label}</text>`});svg.innerHTML=out;
+}
+function priceDrawCandidate(svgId,year,currency){
+  const all=year==='all',years=Object.keys(PRICE).map(Number),labels=all?years.map(y=>y===2026?'2026 YTD':String(y)):PRICE[year].E.map((_,i)=>MON[i]+'/26'.replace('26',String(year).slice(2)));
+  const typ=$('precoTipo').value,series=[['E','Elliottii','#0b604a'],['T','Tropical','#4d93c4']].filter(([k])=>typ==='both'||typ===k).map(([k,label,color])=>({label,color,values:all?years.map(y=>priceStats(priceValues(y,k,currency)).avg):priceValues(year,k,currency)}));
+  priceLine(svgId,labels,series,currency);
+}
+priceUpdate=function(){
+  const year=$('precoAno').value,currency=$('precoMoeda').value,compare=currency==='COMPARE',mode=currency==='USD'?'USD':'BRL',typ=$('precoTipo').value,all=year==='all',years=Object.keys(PRICE).map(Number);
+  $('precoChart').parentElement.style.display=compare?'none':'block';$('precoCompareWrap').style.display=compare?'block':'none';
+  if(compare){priceDrawCandidate('precoChartBRL',year,'BRL');priceDrawCandidate('precoChartUSD',year,'USD')}else priceDrawCandidate('precoChart',year,mode);
+  const values=k=>all?years.map(y=>priceStats(priceValues(y,k,mode)).avg):priceValues(year,k,mode);
+  const e=priceStats(values('E')),t=priceStats(values('T')),chosen=typ==='T'?t:e;
+  for(const [id,field]of [['prAtual','last'],['prMedia','avg'],['prMax','max'],['prMin','min']])$(id).textContent=priceMoney(chosen[field],mode);
+  for(const [id,field]of [['prAtualT','last'],['prMediaT','avg'],['prMaxT','max'],['prMinT','min']])$(id).textContent=typ==='both'?'Tropical: '+priceMoney(t[field],mode):'';
+  $('prVar').textContent=chosen.chg==null?'Não disponível':priceNumber(chosen.chg)+'%';
+  $('prDif').textContent=all?'Média das médias anuais; 2026 parcial':'Diferença atual E − T: '+priceMoney(e.last==null||t.last==null?null:e.last-t.last,mode);
+  const table=$('prTable');table.innerHTML='';
+  if(all){for(const y of years){const ev=priceStats(priceValues(y,'E',mode)).avg,tv=priceStats(priceValues(y,'T',mode)).avg;table.insertAdjacentHTML('beforeend',`<tr><td>${y}${y===2026?' · jan–out':''}</td><td>${priceMoney(ev,mode)}</td><td>${priceMoney(tv,mode)}</td><td>${priceMoney(ev==null||tv==null?null:ev-tv,mode)}</td></tr>`)}}
+  else{const ev=priceValues(year,'E',mode),tv=priceValues(year,'T',mode);for(let i=0;i<ev.length;i++)table.insertAdjacentHTML('beforeend',`<tr><td>${MON[i]}/${String(year).slice(2)}</td><td>${priceMoney(ev[i],mode)}</td><td>${priceMoney(tv[i],mode)}</td><td>${priceMoney(ev[i]==null||tv[i]==null?null:ev[i]-tv[i],mode)}</td></tr>`);
+    for(const note of Object.values(PRICE[year].notes??{})){const row=document.createElement('tr'),cell=document.createElement('td');cell.colSpan=4;cell.style.textAlign='left';cell.textContent='Observação: '+note;row.appendChild(cell);table.appendChild(row)}
+  }
+  $('prTabSub').textContent=(all?'Médias anuais · 2013–2026':year==='2026'?'Preços realizados até outubro de 2026':year)+' · '+(mode==='USD'?'US$/t · somente câmbio mensal BCB':'R$/t');
+  const box=$('prAnnual');box.innerHTML='';for(const y of [...years].reverse()){const ev=priceStats(priceValues(y,'E',mode)).avg,tv=priceStats(priceValues(y,'T',mode)).avg;box.insertAdjacentHTML('beforeend',`<div class="rank"><span>${y}</span><b>E ${priceMoney(ev,mode)} · T ${priceMoney(tv,mode)}</b><em>${y===2026?'jan–out':''}</em></div>`)}
+  $('priceFXStatus').textContent=mode==='USD'||compare?'Conversão: R$/t ÷ R$/US$. Sem taxa mensal BCB validada, US$/t fica não disponível; não se usa câmbio anual de julho.':'Unidade: R$/t. 2026 realizado janeiro–outubro; novembro e dezembro não disponíveis.';
+  if(year==='2026'&&mode==='BRL')$('priceFXStatus').textContent+=' Média conjunta simples jan–out (Elliottii e Tropical): '+priceMoney(priceStats([...PRICE[2026].E,...PRICE[2026].T]).avg)+'.';
+  document.querySelector('#preco .section .sub').textContent=compare?'Comparação R$/t × US$/t; valores em US$ dependem das taxas mensais BCB disponíveis.':'Preço da goma-resina em '+(mode==='USD'?'US$/t':'R$/t')+'; valores históricos e observações preservados.';
+};
+// Price CSV uses the selected year, original BRL observations and explicit monthly coverage.
+const exportBeforeOnda2=exportCurrent;
+exportCurrent=function(){
+  if(currentView()!=='preco')return exportBeforeOnda2();
+  const selected=$('precoAno').value,years=Object.keys(PRICE).filter(y=>selected==='all'||y===selected),rows=[['Ano','Mês','Elliottii R$/t','Tropical R$/t','Unidade','Competência','Observação','Fonte']];
+  for(const y of years)for(let i=0;i<PRICE[y].E.length;i++)rows.push([y,MON[i],PRICE[y].E[i],PRICE[y].T[i],'R$/t',y==='2026'?'Preços realizados até outubro de 2026':'Ano completo',PRICE[y].notes?.[MON[i]]??'',y==='2026'?PRICE_SOURCE.source:'Série ARESB preservada']);
+  saveCSV('ARESB_Precos_'+(selected==='all'?'2013_2026':selected)+'_out2026.csv',rows);
+};
+$('btnExportar').onclick=()=>exportCurrent();
+for(const id of ['precoAno','precoTipo','precoMoeda'])$(id).onchange=()=>priceUpdate();
+
+vgUpdate();
 </script>
 </body></html>
